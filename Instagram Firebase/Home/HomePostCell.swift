@@ -97,8 +97,6 @@ class HomePostCell: UICollectionViewCell {
     }()
 
     @objc func handleLike() {
-        print("Liked")
-
         delegate?.didLike(for: self)
     }
 

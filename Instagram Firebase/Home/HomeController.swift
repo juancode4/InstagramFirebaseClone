@@ -4,7 +4,7 @@
 //  Instagram Firebase
 //
 //  Created by Juan Navarro on 1/3/20.
-//  Copyright © 2020 Juan Navarro. All rights reserved. jkjdxkliuhkljh
+//  Copyright © 2020 Juan Navarro. All rights reserved. jkjdxkliuhkljhj
 //
 
 import UIKit
@@ -45,7 +45,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         print("Handle refresh")
         posts.removeAll()
         fetchAllPosts()
-        print(" ")
     }
 
     fileprivate func fetchAllPosts() {

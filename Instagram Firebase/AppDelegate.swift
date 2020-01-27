@@ -3,7 +3,7 @@ import Firebase
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
 
 
@@ -19,11 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("Register for notifications", deviceToken)
+        print("**********Register for notifications", deviceToken)
+    }
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Registered with FCM token:", fcmToken)
     }
 
     private func attemptRegisterForNotifications(application: UIApplication) {
         print("*****Attempt register******")
+        
+        Messaging.messaging().delegate = self
 
         //user notification auth
         let options: UNAuthorizationOptions = [.alert, .badge, .sound]

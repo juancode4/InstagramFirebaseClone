@@ -72,7 +72,6 @@ class LoginController: UIViewController {
               print("Failed to sign in with email")
                 return
             }
-            print("Successfully logged back in!", user?.user.uid ?? "")
             
             let window = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})

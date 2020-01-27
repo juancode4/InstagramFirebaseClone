@@ -50,7 +50,6 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     var isFinishedPaging = false
     
     fileprivate func paginatePosts() {
-        print("Start paging for post")
         
         guard let uid = self.user?.uid else { return }
         
@@ -88,11 +87,9 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
                 
                 self.posts.append(post)
                 
-                //print(snapshot.key)
             })
             
             self.posts.forEach { (post) in
-                print(post.id ?? "")
             }
             
             self.collectionView.reloadData()
@@ -165,7 +162,6 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         // show you how to fire off the paginate call.
         
         if indexPath.item == self.posts.count - 1 && !isFinishedPaging {
-            print("Paginating for posts")
             paginatePosts()
         }
         

@@ -11,7 +11,6 @@ import Firebase
 
 extension Database {
     static func FetchUserWithUID(uid: String, completion: @escaping (User) -> ()) {
-        print("Fetching user with uid:", uid)
         
         Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
          

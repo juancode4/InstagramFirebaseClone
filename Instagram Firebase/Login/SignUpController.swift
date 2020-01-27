@@ -134,7 +134,6 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
                 }
                 
                     guard let profileImageUrl = downloadURL?.absoluteString else { return }
-                    print("successfully uploaded profile image")
                     
                     guard let uid = user?.user.uid else {return}
 
@@ -146,7 +145,6 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
                             print("Failed to save user info db:")
                             return
                         }
-                        print("successfully saved user info to db")
                                 
                         let window = UIApplication.shared.connectedScenes
                         .filter({$0.activationState == .foregroundActive})
